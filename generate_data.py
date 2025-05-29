@@ -12,7 +12,7 @@ def generate_vrp_data(dataset_size, vrp_size):
     CAPACITIES = {
         10: 20.,
         20: 30.,
-        50: 40.,
+        30: 40.,
         100: 50.
     }
     return list(zip(
@@ -40,6 +40,7 @@ def generate_op_data(dataset_size, op_size, prize_type='const'):
     # Max length is approximately half of optimal TSP tour, such that half (a bit more) of the nodes can be visited
     # which is maximally difficult as this has the largest number of possibilities
     MAX_LENGTHS = {
+        10: 1.,
         20: 2.,
         50: 3.,
         100: 4.
@@ -65,6 +66,7 @@ def generate_pctsp_data(dataset_size, pctsp_size, penalty_factor=3):
     # is (n / 2) / 2 = n / 4 so divide by this means multiply by 4 / n,
     # However instead of 4 we use penalty_factor (3 works well) so we can make them larger or smaller
     MAX_LENGTHS = {
+        10: 1.,
         20: 2.,
         50: 3.,
         100: 4.
